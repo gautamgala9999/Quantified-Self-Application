@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Add Tracker{% endblock %}
+{% block content %}
+        <h4 align="left" class="card-header text-white">Hello, {{ user.fullname }}</h4>
+
+<form method="post">
+    <div class="form-group">
+
+        <h2 style="padding-left: 200px">Add Tracker</h2>
+
+        <div align="left" style="padding-left: 220px">
+
+        <label for="name">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter tracker name"
+            maxlength="30"
+            style="width: 300px; border-radius: 15px; text-align: left"
+            required
+        >
+            <label for="description">Description</label>
+        <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            placeholder="Enter tracker description"
+            maxlength="200"
+            style="width: 300px; border-radius: 15px; text-align: left"
+            required
+        ></textarea>
+
+
+            <label style="padding-top: 10px" for="type">Tracker Type</label>
+                        <select style="width: 300px;border-radius: 15px; text-align: left" id="type"  class="form-control"  name="type" required>
+                            <option value="Numerical">Numerical</option>
+                            <option value="Multiple Choice">Multiple Choice (Mood)</option>
+                            <option value="Boolean">Boolean</option>
+
+
+                        </select>
+
+          <label for="settings">Settings <small>(Optional)</small></label>
+        <input
+            type="text"
+            class="form-control"
+            id="settings"
+            name="settings"
+            placeholder="Enter tracker settings"
+            maxlength="80"
+            style="width: 300px; border-radius: 15px; text-align: left"
+        />
+
+            <br>
+            <button type="submit" class="btn btn-dark"><b>Add Tracker</b></button>
+
+        </div>
+
+
+    </div>
+</form>
+
+{% endblock %}

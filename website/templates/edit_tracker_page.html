@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Edit Tracker{% endblock %}
+
+{% block content %}
+        <h4 align="left" class="card-header text-white">Hello, {{ user.fullname }}</h4>
+
+<form method="post">
+    <div class="form-group">
+
+        <h2 style="padding-left: 200px">Edit Tracker</h2>
+
+        <div align="left" style="padding-left: 220px">
+
+
+           
+
+             <label for="name">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter tracker name"
+            maxlength="30"
+            style="width: 300px; border-radius: 15px; text-align: left"
+            value="{{ tracker.name }}"
+        />
+            <label for="description">Description</label>
+        <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            placeholder="Enter tracker description"
+            maxlength="200"
+            style="width: 300px; border-radius: 15px; text-align: left"
+        >{{ tracker.description }}</textarea>
+
+
+            <label style="padding-top: 10px" for="type">Tracker Type</label>
+                        <select style="width: 300px;border-radius: 15px; text-align: left" id="type"  class="form-control"  name="type" disabled required >
+                            <option value="{{ tracker.tracker_type }}">{{ tracker.tracker_type }}</option>
+                            <option value="Numerical">Numerical</option>
+                            <option value="Multiple Choice">Multiple Choice</option>
+                            <option value="Boolean">Boolean</option>
+
+
+                        </select>
+
+          <label for="settings">Settings <small>(Optional)</small></label>
+        <input
+            type="text"
+            class="form-control"
+            id="settings"
+            name="settings"
+            placeholder="Enter tracker settings"
+            maxlength="80"
+            style="width: 300px; border-radius: 15px; text-align: left"
+            value="{{ tracker.settings }}"
+        />
+
+            <br>
+            <button type="submit" class="btn btn-dark" ><b>Update Tracker</b></button>
+
+        </div>
+
+
+    </div>
+</form>
+
+{% endblock %}
